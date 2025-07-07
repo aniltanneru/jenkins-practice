@@ -20,14 +20,12 @@ pipeline {
             steps {
                 script {
                     sh """
+                        echo "Hello, This is Build"
+                        echo "Project: $PROJECT"
                         echo "Hello ${params.PERSON}"
-
                         echo "Biography: ${params.BIOGRAPHY}"
-
                         echo "Toggle: ${params.TOGGLE}"
-
                         echo "Choice: ${params.CHOICE}"
-
                         echo "Password: ${params.PASSWORD}"
                     """
                 }
