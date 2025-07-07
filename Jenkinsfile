@@ -20,7 +20,7 @@ pipeline {
             steps {
                 script {
                     sh """
-                     echo "Hello ${params.PERSON}"
+                        echo "Hello ${params.PERSON}"
 
                         echo "Biography: ${params.BIOGRAPHY}"
 
