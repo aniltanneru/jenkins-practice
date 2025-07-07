@@ -18,23 +18,37 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh 'echo Hello, This is Build'
-                sh 'echo project: $PROJECT'
-                sh 'echo "Hello ${params.PERSON}'
-                sh 'echo "Biography: ${params.BIOGRAPHY}'
-                sh 'echo "Toggle: ${params.TOGGLE}'
-                sh 'echo "Choice: ${params.CHOICE}'
-                sh 'echo "Password: ${params.PASSWORD}'
+                script {
+                    sh """
+                        echo "Hello ${params.PERSON}"
+
+                        echo "Biography: ${params.BIOGRAPHY}"
+
+                        echo "Toggle: ${params.TOGGLE}"
+
+                        echo "Choice: ${params.CHOICE}"
+
+                        echo "Password: ${params.PASSWORD}"
+                    """
+                }
             }
         }
         stage('Test') {
             steps {
-                sh 'echo Hello, This is Test'
+                script {
+                sh """
+                    echo "Hello, This is Test"
+                    """    
+                }
             }
         }
         stage('Deploy') {
             steps {
-                sh 'echo Hello, This is Deploy'
+                script {
+                    sh """
+                    echo "Hello, This is Deploy"
+                    """
+                }
             }
         }
     }
